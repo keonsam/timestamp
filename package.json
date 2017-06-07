@@ -2,6 +2,10 @@
   "name": "timestamp",
   "version": "1.0.0",
   "description": "",
+  "engine":{
+    "node":"4.2.6",
+    "npm": "4.6.1"
+  },
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
