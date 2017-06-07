@@ -2,7 +2,11 @@
 const express = require('express')
 const app = express()
 let Json = {}
-app.use(express.static(__dirname + '/index'))
+//app.use(express.static(__dirname + '/index'))
+app.engine('html', require('ejs').renderFile);
+app.get('/', function(req, res){
+  res.render('index.html');
+});
 app.get('/url/:data',(req,res)=>{
   const date = req.params.data
   if(isNaN(date)){
