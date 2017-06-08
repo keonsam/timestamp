@@ -7,7 +7,7 @@ const VIEWS = path.join(__dirname);
 
 app.get('/', function(req, res){
   res.sendFile('index.html',{ root : VIEWS })
-  
+
 })
 app.get('/url/:data',(req,res)=>{
   const date = req.params.data
@@ -25,4 +25,4 @@ app.get('/url/:data',(req,res)=>{
   res.json(Json)
 }
 })
-app.listen(3000)
+app.listen(process.env.PORT || 3000)
