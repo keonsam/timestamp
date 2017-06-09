@@ -9,7 +9,7 @@ app.get('/', function(req, res){
   res.sendFile('index.html',{ root : VIEWS })
 
 })
-app.get('/url/:data',(req,res)=>{
+app.get('/:data',(req,res)=>{
   const date = req.params.data
   if(isNaN(date)){
   Json = {
