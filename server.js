@@ -13,14 +13,15 @@ app.get('/:data',(req,res)=>{
   const date = req.params.data
   if(isNaN(date)){
   Json = {
-    "unix": new Date(date).getTime(),
-    "natural": new Date(date).toString()
+    "unix": new Date(date).getTime() /1000,
+    "natural": new Date(date).toDateString()
   }
   res.json(Json)
 }else{
+  let sectime = date* 1000
   Json = {
     "unix": date,
-    "natural": new Date(date).toString()
+    "natural": new Date(sectime).toDateString()
   }
   res.json(Json)
 }
